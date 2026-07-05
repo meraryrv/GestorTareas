@@ -1,0 +1,83 @@
+<div class="new-task-bar"
+(click)="showForm.set(!showForm())">
+
+
+<span>
+➕ Nueva tarea
+</span>
+
+
+</div>
+
+
+
+@if(showForm()){
+
+
+<div
+@slideFade
+ class="card task-form-card">
+
+
+<div class="card-body">
+
+
+<h4>
+Nueva tarea
+</h4>
+
+
+
+<form
+[formGroup]="taskForm"
+(ngSubmit)="onSubmit()">
+
+
+
+<input
+
+class="form-control mb-3"
+
+type="text"
+
+placeholder="Título"
+
+formControlName="title">
+
+
+
+<textarea
+
+class="form-control mb-3"
+
+rows="3"
+
+placeholder="Descripción"
+
+formControlName="description">
+
+</textarea>
+
+
+
+
+<button
+
+class="btn btn-primary">
+
+Guardar tarea
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+}

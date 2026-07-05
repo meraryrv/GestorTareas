@@ -1,0 +1,53 @@
+<div class="edit-container">
+
+  <h3>
+    Editar tarea
+  </h3>
+
+
+  <form
+    [formGroup]="taskForm"
+    (ngSubmit)="updateTask()">
+
+
+    <input
+      class="form-control mb-3"
+      type="text"
+      formControlName="title"
+      placeholder="Título">
+
+
+    <textarea
+      class="form-control mb-3"
+      rows="4"
+      formControlName="description"
+      placeholder="Descripción">
+    </textarea>
+
+
+    <div class="d-flex gap-2">
+
+      <button
+        class="btn btn-success"
+        type="submit">
+
+        Guardar
+
+      </button>
+
+
+      <button
+        class="btn btn-secondary"
+        type="button"
+        (click)="close()">
+
+        Cancelar
+
+      </button>
+
+    </div>
+
+
+  </form>
+
+</div>

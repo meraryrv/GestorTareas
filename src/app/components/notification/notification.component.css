@@ -1,0 +1,49 @@
+.toast-message{
+
+position:fixed;
+
+top:20px;
+right:20px;
+
+
+background:#198754;
+
+color:white;
+
+padding:15px 25px;
+
+border-radius:10px;
+
+
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+
+
+z-index:2000;
+
+
+animation:show .3s ease;
+
+
+}
+
+
+
+@keyframes show{
+
+from{
+
+transform:translateY(-20px);
+
+opacity:0;
+
+}
+
+to{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+}

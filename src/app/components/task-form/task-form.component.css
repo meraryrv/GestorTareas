@@ -1,0 +1,219 @@
+.card{
+
+
+max-width:900px;
+
+margin:auto;
+
+border:none;
+
+border-radius:24px;
+
+padding:10px;
+
+
+background:white;
+
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.08);
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+h4{
+
+font-weight:700;
+
+}
+
+
+
+input,
+textarea{
+
+
+border-radius:16px;
+
+border:1px solid #e5e7eb;
+
+
+padding:14px;
+
+
+}
+
+
+
+button{
+
+
+border-radius:14px;
+
+
+padding:10px 22px;
+
+
+font-weight:600;
+
+
+}
+
+.new-task-bar{
+
+
+background:white;
+
+
+padding:18px 25px;
+
+
+border-radius:18px;
+
+
+cursor:pointer;
+
+
+font-weight:700;
+
+
+box-shadow:
+
+0 10px 25px rgba(0,0,0,.08);
+
+
+margin-bottom:20px;
+
+
+transition:.3s;
+
+
+}
+
+
+
+.new-task-bar:hover{
+
+
+transform:translateY(-3px);
+
+
+}
+
+
+
+.task-form-card {
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 25px;
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,.08);
+
+}
+
+
+
+.task-form-card form {
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+
+
+.task-form-card input,
+.task-form-card textarea {
+
+
+  width:80%;
+
+
+  border-radius:14px;
+  background-color: rgb(209, 195, 209);
+   
+  border:1px solid #ddd;
+
+
+  padding:14px;
+
+
+  font-size:15px;
+
+
+  resize:none;
+
+
+}
+
+
+
+.task-form-card textarea {
+
+  min-height:120px;
+
+}
+
+
+
+.task-form-card button {
+
+
+  width:180px;
+
+
+  border-radius:14px;
+
+
+  padding:12px;
+
+
+  font-weight:600;
+
+
+}
+
+
+@keyframes show{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(-15px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+input {
+    color: black;
+}
+
+.form-control {
+    color: #333;
+}

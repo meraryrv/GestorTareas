@@ -1,0 +1,171 @@
+<div class="tasks-page">
+
+  <h2 class="mb-4">
+    Mis Tareas
+  </h2>
+
+
+  <div class="task-toolbar">
+
+  <input
+    class="form-control search-input"
+    type="text"
+    placeholder="🔍 Buscar tarea..."
+    [(ngModel)]="searchText">
+
+  <button
+    class="filter-button"
+    (click)="showFilters.set(!showFilters())">
+
+    ⚙ Filtros
+
+  </button>
+
+</div>
+
+@if(showFilters()){
+
+<div
+  @slideFade
+  class="filter-options">
+
+  <button
+    class="btn btn-outline-primary"
+    (click)="filter='all'">
+    Todas
+  </button>
+
+  <button
+    class="btn btn-outline-warning"
+    (click)="filter='pending'">
+    Pendientes
+  </button>
+
+  <button
+    class="btn btn-outline-success"
+    (click)="filter='completed'">
+    Completadas
+  </button>
+
+</div>
+
+
+
+}
+
+
+
+@if(selectedTask !== null){
+
+  <div class="overlay">
+
+    <div class="modal-edit">
+
+      <app-task-edit
+      [task]="selectedTask"
+      [close]="closeEdit">
+      </app-task-edit>
+
+    </div>
+
+  </div>
+
+}
+
+
+
+@if(filteredTasks.length === 0)
+{
+
+<div class="alert alert-info">
+
+No hay tareas registradas.
+
+</div>
+
+}
+
+
+<div class="task-list-container">
+
+
+@for(task of filteredTasks; track task.id)
+{
+
+<div class="task-card">
+
+
+  <div class="task-info">
+
+
+    <h5 class="task-title">
+
+      {{ task.title }}
+
+      @if(task.isComplete)
+      {
+        <span class="text-success">
+          ✔
+        </span>
+      }
+
+    </h5>
+
+
+    <p>
+      {{task.description}}
+    </p>
+
+
+    <small>
+      {{task.creationDate | date:'short'}}
+    </small>
+
+
+  </div>
+
+
+
+  <div class="task-actions">
+
+
+    <input
+    class="form-check-input"
+    type="checkbox"
+    [checked]="task.isComplete"
+    (change)="completeTask(task.id)"
+    >
+
+
+
+    <button
+    class="icon-btn edit"
+    (click)="editTask(task)"
+    title="Editar">
+
+    ✏️
+
+    </button>
+
+
+
+    <button
+    class="icon-btn delete"
+    (click)="deleteTask(task.id)"
+    title="Eliminar">
+
+    🗑️
+
+    </button>
+
+
+  </div>
+
+
+
+</div>
+
+}
+
+</div>
+</div>
